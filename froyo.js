@@ -7,14 +7,13 @@ const splitOrder = orders.split(",");
 froyoFlavors.orders = splitOrder;
 console.log(froyoFlavors.orders);
 
-const countOrder = [];
+const countOrder = {};
 
 for (order in froyoFlavors.orders) {
-  // console.log(order)
-  if (!countOrder[order]) {
-    countOrder.push(`${order}`);
+  if (!countOrder[splitOrder[order]]) {
+    countOrder[splitOrder[order]] = 1;
   } else {
-    countOrder.push(order++);
+    countOrder[splitOrder[order]]++;
   }
 }
 
